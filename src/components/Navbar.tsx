@@ -32,30 +32,30 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-4",
+        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-5",
         scrolled 
-          ? "backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 shadow-sm" 
+          ? "backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 shadow-sm" 
           : "bg-transparent"
       )}
     >
       <div className="container px-4 md:px-6 mx-auto flex items-center justify-between">
         <Link 
           to="/" 
-          className="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400"
+          className="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-primary dark:from-gray-100 dark:to-primary"
         >
           Ronish Prajapati
         </Link>
         
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={cn(
-                "text-sm font-medium relative transition-colors",
+                "text-sm font-medium relative transition-colors hover:text-primary",
                 location.pathname === link.path
                   ? "text-primary after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                  : "text-muted-foreground hover:text-primary"
+                  : "text-muted-foreground"
               )}
             >
               {link.name}
@@ -74,7 +74,7 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex md:hidden pt-16 bg-background">
+        <div className="fixed inset-0 z-50 flex md:hidden pt-16 bg-background/95 backdrop-blur-md">
           <nav className="flex flex-col items-center justify-center w-full gap-8 p-8 animate-fade-in">
             {navLinks.map((link, index) => (
               <Link

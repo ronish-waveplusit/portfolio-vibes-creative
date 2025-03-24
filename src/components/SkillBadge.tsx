@@ -1,6 +1,7 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 interface SkillBadgeProps {
   skill: string;
@@ -9,14 +10,15 @@ interface SkillBadgeProps {
 
 const SkillBadge: React.FC<SkillBadgeProps> = ({ skill, className }) => {
   return (
-    <div
+    <Badge
+      variant="secondary"
       className={cn(
-        "skill-badge inline-flex px-3 py-1 rounded-full text-sm font-medium bg-secondary text-secondary-foreground",
+        "skill-badge px-4 py-2 text-sm font-medium transition-all hover:scale-105 hover:bg-primary hover:text-primary-foreground",
         className
       )}
     >
       {skill}
-    </div>
+    </Badge>
   );
 };
 
