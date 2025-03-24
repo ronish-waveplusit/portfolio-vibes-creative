@@ -64,7 +64,7 @@ const Projects = () => {
   return (
     <div className="pt-24 pb-16">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-12">
           <SectionHeading 
             title="My Projects" 
             subtitle="Here's a collection of projects I've worked on, showcasing my skills and experience."
@@ -115,7 +115,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 section-fade">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <ProjectCard
               key={project.title}

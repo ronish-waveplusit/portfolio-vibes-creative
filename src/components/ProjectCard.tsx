@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div 
       className={cn(
-        "project-card group relative overflow-hidden rounded-lg border bg-white dark:bg-gray-900 shadow-sm",
+        "project-card group relative overflow-hidden rounded-lg border bg-white dark:bg-gray-900 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md",
         className
       )}
     >
