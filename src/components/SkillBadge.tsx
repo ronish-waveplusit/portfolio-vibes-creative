@@ -6,9 +6,10 @@ import { Badge } from "@/components/ui/badge";
 interface SkillBadgeProps {
   skill: string;
   className?: string;
+  level?: number;
 }
 
-const SkillBadge: React.FC<SkillBadgeProps> = ({ skill, className }) => {
+const SkillBadge: React.FC<SkillBadgeProps> = ({ skill, className, level }) => {
   return (
     <Badge
       variant="secondary"
@@ -18,6 +19,9 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({ skill, className }) => {
       )}
     >
       {skill}
+      {level && (
+        <span className="ml-1 opacity-70">• {level}</span>
+      )}
     </Badge>
   );
 };

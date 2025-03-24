@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowDown, ArrowRight, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { ArrowDown, ArrowRight, Github, Linkedin, Mail, ExternalLink, Code, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import SectionHeading from "@/components/SectionHeading";
 import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
@@ -27,6 +27,24 @@ const Index = () => {
   const skills = [
     "PHP", "Laravel", "WordPress", "ReactJS", "TypeScript", 
     "Node.js", "RESTful API", "Git", "Database Management", "Problem Solving"
+  ];
+
+  const skillCategories = [
+    {
+      title: "Frontend Development",
+      icon: <Code className="h-5 w-5" />,
+      skills: ["ReactJS", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"]
+    },
+    {
+      title: "Backend Development",
+      icon: <Code className="h-5 w-5" />,
+      skills: ["PHP", "Laravel", "WordPress", "Node.js", "RESTful API", "MySQL"]
+    },
+    {
+      title: "Tools & Technologies",
+      icon: <Briefcase className="h-5 w-5" />,
+      skills: ["Git", "GitHub", "VS Code", "Docker", "NPM", "Webpack"]
+    }
   ];
 
   const featuredProjects = [
@@ -163,17 +181,50 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Projects - Elvito inspired */}
+      {/* Skills Section - NEW, Elvito inspired */}
       <section className="py-24 px-4 bg-gray-50 dark:bg-gray-900/20 section-fade">
+        <div className="container mx-auto max-w-6xl">
+          <SectionHeading 
+            title="My Skills" 
+            subtitle="Here are the technologies and skills I've mastered throughout my development journey."
+            centered
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {skillCategories.map((category, idx) => (
+              <Card key={idx} className="bg-white dark:bg-gray-900/60 backdrop-blur-sm border-none shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="p-2 rounded-md bg-primary/10 text-primary">
+                      {category.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold">{category.title}</h3>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {category.skills.map((skill) => (
+                      <SkillBadge key={skill} skill={skill} />
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section - Expanded and Enhanced */}
+      <section className="py-24 px-4 section-fade">
         <div className="container mx-auto max-w-6xl">
           <SectionHeading 
             title="Featured Projects" 
             subtitle="Here are some of my recent projects that showcase my skills and experience."
             centered
           />
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project) => (
-              <div key={project.title} className="group bg-white dark:bg-gray-900/60 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <div key={project.title} className="group h-full bg-white dark:bg-gray-900/60 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col">
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={project.imageUrl} 
@@ -190,14 +241,14 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>
                   <a 
                     href={project.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
+                    className="inline-flex items-center text-primary hover:text-primary/80 font-medium mt-auto"
                   >
                     View Project <ExternalLink className="ml-1 h-4 w-4" />
                   </a>
@@ -205,7 +256,8 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <div className="mt-14 text-center">
+          
+          <div className="mt-12 text-center">
             <Button asChild size="lg" className="rounded-full px-8">
               <Link to="/projects">
                 View All Projects <ArrowRight className="ml-2 h-4 w-4" />
