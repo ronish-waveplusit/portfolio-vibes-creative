@@ -6,6 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Input } from "@/components/ui/input";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@/components/ui/pagination";
 import { Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Sample blog data - in a real app, this would come from an API
 const blogPosts = [
@@ -130,10 +131,10 @@ const Blog = () => {
               <PaginationLink href="#" isActive>1</PaginationLink>
             </PaginationItem>
             <PaginationItem>
-              <PaginationLink href="#" disabled>2</PaginationLink>
+              <PaginationLink href="#" className="pointer-events-none opacity-50">2</PaginationLink>
             </PaginationItem>
             <PaginationItem>
-              <PaginationLink href="#" disabled>3</PaginationLink>
+              <PaginationLink href="#" className="pointer-events-none opacity-50">3</PaginationLink>
             </PaginationItem>
           </PaginationContent>
         </Pagination>
