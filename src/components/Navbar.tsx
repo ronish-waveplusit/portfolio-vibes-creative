@@ -13,6 +13,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
+    { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -53,7 +54,7 @@ const Navbar = () => {
               to={link.path}
               className={cn(
                 "text-sm font-medium relative transition-colors hover:text-primary",
-                location.pathname === link.path
+                location.pathname === link.path || location.pathname.startsWith(link.path + "/")
                   ? "text-primary after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-primary"
                   : "text-muted-foreground"
               )}
@@ -83,7 +84,7 @@ const Navbar = () => {
                 className={cn(
                   "text-xl font-medium relative transition-all animate-fade-in",
                   `stagger-${index + 1}`,
-                  location.pathname === link.path
+                  location.pathname === link.path || location.pathname.startsWith(link.path + "/")
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary"
                 )}

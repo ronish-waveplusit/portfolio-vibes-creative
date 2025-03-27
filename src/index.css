@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -111,19 +112,23 @@
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 1 !important;
 }
 
 .animate-slide-in-left {
-  animation: slideInFromLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: slideInFromLeft 0.5s ease forwards;
+  opacity: 1 !important;
 }
 
 .animate-slide-in-right {
-  animation: slideInFromRight 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: slideInFromRight 0.5s ease forwards;
+  opacity: 1 !important;
 }
 
 .animate-scale-in {
-  animation: scaleIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: scaleIn 0.5s ease forwards;
+  opacity: 1 !important;
 }
 
 .stagger-1 {
@@ -166,20 +171,13 @@
 }
 
 .section-container {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .section-container:hover {
   transform: translateY(-5px);
-}
-
-@media (max-width: 768px) {
-  .section-fade {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .project-card {
@@ -221,4 +219,45 @@
 
 .glow-effect:hover::before {
   opacity: 0.7;
+}
+
+/* Blog specific styles */
+.prose {
+  @apply text-foreground;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold mb-4 mt-8 bg-clip-text text-transparent bg-gradient-to-r from-vibrant-purple to-vibrant-pink;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose a {
+  @apply text-primary underline hover:text-accent transition-colors;
+}
+
+.prose ul, .prose ol {
+  @apply my-6 pl-6;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose blockquote {
+  @apply pl-4 border-l-4 border-primary/30 italic;
+}
+
+.prose img {
+  @apply rounded-md my-8;
+}
+
+.prose pre {
+  @apply p-4 rounded-md bg-muted/50 overflow-x-auto my-6;
+}
+
+.prose code {
+  @apply text-sm bg-muted/50 px-1 py-0.5 rounded;
 }

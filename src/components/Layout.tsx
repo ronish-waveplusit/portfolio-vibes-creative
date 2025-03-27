@@ -32,7 +32,7 @@ const Layout = () => {
       ) : (
         <>
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow" key={location.pathname}>
             <Outlet />
           </main>
           <Footer />
