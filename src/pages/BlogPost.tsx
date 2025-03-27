@@ -161,6 +161,11 @@ const BlogPost = () => {
       </div>
     );
   }
+
+  // Find related posts (same category or shared tags)
+  const relatedPosts = blogPosts
+    .filter(p => p.id !== post.id && (p.category === post.category || p.tags.some(tag => post.tags.includes(tag))))
+    .slice(0, 3);
   
   const handleSubmitComment = (e: React.FormEvent) => {
     e.preventDefault();
@@ -196,24 +201,27 @@ const BlogPost = () => {
 
   return (
     <div className="pb-16">
-      {/* Full-width hero section */}
+      {/* Full-width hero section styled more like the reference site */}
       <div className="w-full relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/40 z-10"></div>
         <img 
           src={post.imageUrl} 
           alt={post.title} 
-          className="w-full h-[60vh] object-cover"
+          className="w-full h-[70vh] object-cover"
         />
-        <div className="container mx-auto px-4 md:px-6 absolute inset-0 z-20 flex flex-col justify-end pb-16">
-          <div className="max-w-3xl">
-            <div className="bg-gradient-to-br from-vibrant-purple to-vibrant-pink px-3 py-1 rounded-full text-white inline-block mb-4">
-              {post.category}
+        <div className="container mx-auto px-4 md:px-6 absolute inset-0 z-20 flex flex-col justify-end pb-20">
+          <div className="max-w-4xl">
+            <div className="flex items-center mb-4 text-white/90">
+              <Link to="/blog" className="text-sm hover:underline">Blog</Link>
+              <span className="mx-2">›</span>
+              <span className="text-sm">{post.category}</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white">{post.title}</h1>
+            
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">{post.title}</h1>
             
             <div className="flex items-center justify-between text-white">
               <div className="flex items-center">
-                <Avatar className="h-10 w-10 mr-3 border-2 border-white">
+                <Avatar className="h-12 w-12 mr-4 border-2 border-white">
                   <AvatarImage src={post.author.avatar} alt={post.author.name} />
                   <AvatarFallback>{post.author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>
@@ -230,122 +238,194 @@ const BlogPost = () => {
         </div>
       </div>
       
-      <div className="container mx-auto px-4 md:px-6 pt-10">
-        <div className="max-w-3xl mx-auto">
-          <Link to="/blog" className="inline-flex items-center text-muted-foreground hover:text-primary mb-6 transition-colors">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to all articles
-          </Link>
-          
-          <div 
-            className="prose prose-lg max-w-none mb-10 dark:prose-invert"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-          
-          <div className="flex flex-wrap gap-2 mb-8">
-            {post.tags.map((tag, index) => (
-              <span 
-                key={index} 
-                className="px-3 py-1 rounded-full text-sm bg-accent/30 text-accent-foreground"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-          
-          <div className="flex items-center justify-between py-4 border-t border-b border-border mb-8">
-            <div className="flex items-center gap-6">
-              <button 
-                onClick={handleLike}
-                className={`flex items-center gap-1 ${liked ? 'text-vibrant-pink' : 'text-muted-foreground'} hover:text-vibrant-pink transition-colors`}
-                aria-label="Like post"
-              >
-                <Heart className={`h-5 w-5 ${liked ? 'fill-vibrant-pink' : ''}`} />
-                <span>{post.likes + likeCount}</span>
-              </button>
+      <div className="container mx-auto px-4 md:px-6 py-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-10">
+            {/* Main content column */}
+            <div className="md:w-3/4">
+              <div 
+                className="prose prose-lg max-w-none mb-10 dark:prose-invert"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
               
-              <button 
-                className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
-                aria-label="View comments"
-              >
-                <MessageSquare className="h-5 w-5" />
-                <span>{post.comments.length}</span>
-              </button>
-            </div>
-            
-            <div className="flex items-center gap-4">
-              <button 
-                onClick={handleShare}
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Share post"
-              >
-                <Share2 className="h-5 w-5" />
-              </button>
-              
-              <button 
-                onClick={handleBookmark}
-                className={`${bookmarked ? 'text-vibrant-orange' : 'text-muted-foreground'} hover:text-vibrant-orange transition-colors`}
-                aria-label="Bookmark post"
-              >
-                <BookmarkPlus className={`h-5 w-5 ${bookmarked ? 'fill-vibrant-orange' : ''}`} />
-              </button>
-            </div>
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4">Comments ({post.comments.length})</h3>
-            
-            {post.comments.length > 0 ? (
-              <div className="space-y-6">
-                {post.comments.map((comment) => (
-                  <Card key={comment.id} className="bg-white/10 backdrop-blur-md dark:bg-gray-800/30 border-primary/10">
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-4">
-                        <Avatar className="h-10 w-10">
-                          <AvatarImage src={comment.author.avatar} alt={comment.author.name} />
-                          <AvatarFallback>{comment.author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                        </Avatar>
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start mb-2">
-                            <div>
-                              <span className="font-medium">{comment.author.name}</span>
-                              <span className="text-sm text-muted-foreground ml-2">{comment.date}</span>
-                            </div>
-                            <button 
-                              className="text-muted-foreground hover:text-primary text-sm flex items-center gap-1"
-                              aria-label="Like comment"
-                            >
-                              <Heart className="h-3.5 w-3.5" />
-                              <span>{comment.likes}</span>
-                            </button>
-                          </div>
-                          <p className="text-foreground">{comment.content}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {post.tags.map((tag, index) => (
+                  <span 
+                    key={index} 
+                    className="px-3 py-1 rounded-full text-sm bg-accent/30 text-accent-foreground"
+                  >
+                    #{tag}
+                  </span>
                 ))}
               </div>
-            ) : (
-              <p className="text-muted-foreground text-center py-4">Be the first to comment!</p>
-            )}
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Add a comment</h3>
-            <form onSubmit={handleSubmitComment}>
-              <div className="mb-4">
-                <Textarea 
-                  placeholder="Share your thoughts..."
-                  className="min-h-[120px] bg-white/10 backdrop-blur-md dark:bg-gray-800/30 border-primary/20 focus:border-primary"
-                  value={comment}
-                  onChange={(e) => setComment(e.target.value)}
-                />
+              
+              <div className="flex items-center justify-between py-4 border-t border-b border-border mb-10">
+                <div className="flex items-center gap-6">
+                  <button 
+                    onClick={handleLike}
+                    className={`flex items-center gap-1 ${liked ? 'text-vibrant-pink' : 'text-muted-foreground'} hover:text-vibrant-pink transition-colors`}
+                    aria-label="Like post"
+                  >
+                    <Heart className={`h-5 w-5 ${liked ? 'fill-vibrant-pink' : ''}`} />
+                    <span>{post.likes + likeCount}</span>
+                  </button>
+                  
+                  <button 
+                    className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
+                    aria-label="View comments"
+                  >
+                    <MessageSquare className="h-5 w-5" />
+                    <span>{post.comments.length}</span>
+                  </button>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <button 
+                    onClick={handleShare}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                    aria-label="Share post"
+                  >
+                    <Share2 className="h-5 w-5" />
+                  </button>
+                  
+                  <button 
+                    onClick={handleBookmark}
+                    className={`${bookmarked ? 'text-vibrant-orange' : 'text-muted-foreground'} hover:text-vibrant-orange transition-colors`}
+                    aria-label="Bookmark post"
+                  >
+                    <BookmarkPlus className={`h-5 w-5 ${bookmarked ? 'fill-vibrant-orange' : ''}`} />
+                  </button>
+                </div>
               </div>
-              <Button type="submit" className="bg-gradient-to-r from-vibrant-purple to-vibrant-pink hover:opacity-90">
-                Post Comment
-              </Button>
-            </form>
+              
+              {/* Author bio - similar to the reference site */}
+              <div className="bg-accent/10 rounded-lg p-6 mb-10">
+                <div className="flex items-start gap-4">
+                  <Avatar className="h-16 w-16">
+                    <AvatarImage src={post.author.avatar} alt={post.author.name} />
+                    <AvatarFallback>{post.author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1">About {post.author.name}</h3>
+                    <p className="text-muted-foreground mb-2">{post.author.role}</p>
+                    <p>An experienced writer and specialist in {post.category.toLowerCase()} topics with a passion for creating engaging content that inspires readers.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mb-10">
+                <h3 className="text-2xl font-semibold mb-6 border-b pb-2">Comments ({post.comments.length})</h3>
+                
+                {post.comments.length > 0 ? (
+                  <div className="space-y-6">
+                    {post.comments.map((comment) => (
+                      <Card key={comment.id} className="bg-white/5 backdrop-blur-md dark:bg-gray-800/20 border-primary/5">
+                        <CardContent className="p-6">
+                          <div className="flex items-start gap-4">
+                            <Avatar className="h-12 w-12">
+                              <AvatarImage src={comment.author.avatar} alt={comment.author.name} />
+                              <AvatarFallback>{comment.author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                            </Avatar>
+                            <div className="flex-1">
+                              <div className="flex justify-between items-start mb-2">
+                                <div>
+                                  <span className="font-medium text-lg">{comment.author.name}</span>
+                                  <span className="text-sm text-muted-foreground ml-2">{comment.date}</span>
+                                </div>
+                                <button 
+                                  className="text-muted-foreground hover:text-primary text-sm flex items-center gap-1"
+                                  aria-label="Like comment"
+                                >
+                                  <Heart className="h-3.5 w-3.5" />
+                                  <span>{comment.likes}</span>
+                                </button>
+                              </div>
+                              <p className="text-foreground">{comment.content}</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-10 bg-white/5 backdrop-blur-md dark:bg-gray-800/20 rounded-lg">
+                    <MessageSquare className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+                    <h4 className="text-lg font-medium mb-2">No comments yet</h4>
+                    <p className="text-muted-foreground mb-4">Be the first to share your thoughts on this article!</p>
+                  </div>
+                )}
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-semibold mb-6 border-b pb-2">Join the conversation</h3>
+                <form onSubmit={handleSubmitComment}>
+                  <div className="mb-4">
+                    <Textarea 
+                      placeholder="Share your thoughts on this article..."
+                      className="min-h-[150px] bg-white/5 backdrop-blur-md dark:bg-gray-800/20 border-primary/10 focus:border-primary"
+                      value={comment}
+                      onChange={(e) => setComment(e.target.value)}
+                    />
+                  </div>
+                  <Button type="submit" className="bg-gradient-to-r from-vibrant-purple to-vibrant-pink hover:opacity-90 px-6">
+                    Post Comment
+                  </Button>
+                </form>
+              </div>
+            </div>
+            
+            {/* Sidebar column - similar to the reference site */}
+            <div className="md:w-1/4 space-y-8">
+              <div>
+                <h3 className="text-lg font-semibold mb-4 border-b pb-2">Related Articles</h3>
+                <div className="space-y-4">
+                  {relatedPosts.map((relatedPost) => (
+                    <Link 
+                      to={`/blog/${relatedPost.id}`} 
+                      key={relatedPost.id}
+                      className="group block"
+                    >
+                      <div className="aspect-video rounded-md overflow-hidden mb-2">
+                        <img 
+                          src={relatedPost.imageUrl} 
+                          alt={relatedPost.title} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <h4 className="font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                        {relatedPost.title}
+                      </h4>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {relatedPost.date} · {relatedPost.readTime}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-semibold mb-4 border-b pb-2">Popular Tags</h3>
+                <div className="flex flex-wrap gap-2">
+                  {Array.from(new Set(blogPosts.flatMap(post => post.tags))).slice(0, 10).map((tag, index) => (
+                    <Link 
+                      to={`/blog?tag=${tag}`} 
+                      key={index}
+                      className="px-3 py-1 rounded-full text-sm bg-accent/20 text-accent-foreground hover:bg-accent/40 transition-colors"
+                    >
+                      #{tag}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-vibrant-purple/10 to-vibrant-pink/10 rounded-lg p-6">
+                <h3 className="text-lg font-semibold mb-3">Subscribe to our newsletter</h3>
+                <p className="text-sm text-muted-foreground mb-4">Get the latest articles and resources delivered straight to your inbox.</p>
+                <Button className="w-full bg-gradient-to-r from-vibrant-purple to-vibrant-pink hover:opacity-90">
+                  Subscribe
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
