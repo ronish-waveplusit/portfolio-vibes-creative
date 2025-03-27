@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -194,44 +195,47 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="pt-28 pb-16">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto">
-          <Link to="/blog" className="inline-flex items-center text-muted-foreground hover:text-primary mb-6 transition-colors">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to all articles
-          </Link>
-          
-          <div className="mb-8">
+    <div className="pb-16">
+      {/* Full-width hero section */}
+      <div className="w-full relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-10"></div>
+        <img 
+          src={post.imageUrl} 
+          alt={post.title} 
+          className="w-full h-[60vh] object-cover"
+        />
+        <div className="container mx-auto px-4 md:px-6 absolute inset-0 z-20 flex flex-col justify-end pb-16">
+          <div className="max-w-3xl">
             <div className="bg-gradient-to-br from-vibrant-purple to-vibrant-pink px-3 py-1 rounded-full text-white inline-block mb-4">
               {post.category}
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white">{post.title}</h1>
             
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between text-white">
               <div className="flex items-center">
-                <Avatar className="h-10 w-10 mr-3">
+                <Avatar className="h-10 w-10 mr-3 border-2 border-white">
                   <AvatarImage src={post.author.avatar} alt={post.author.name} />
                   <AvatarFallback>{post.author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>
                 <div>
                   <div className="font-medium">{post.author.name}</div>
-                  <div className="text-sm text-muted-foreground">{post.author.role}</div>
+                  <div className="text-sm text-white/80">{post.author.role}</div>
                 </div>
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-sm text-white/80">
                 {post.date} · {post.readTime}
               </div>
             </div>
           </div>
-          
-          <div className="rounded-xl overflow-hidden mb-8 h-[300px] md:h-[400px]">
-            <img 
-              src={post.imageUrl} 
-              alt={post.title} 
-              className="w-full h-full object-cover"
-            />
-          </div>
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-4 md:px-6 pt-10">
+        <div className="max-w-3xl mx-auto">
+          <Link to="/blog" className="inline-flex items-center text-muted-foreground hover:text-primary mb-6 transition-colors">
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to all articles
+          </Link>
           
           <div 
             className="prose prose-lg max-w-none mb-10 dark:prose-invert"
