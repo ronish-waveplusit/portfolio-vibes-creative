@@ -20,6 +20,26 @@ const Layout = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  useEffect(() => {
+    // Only set up the observer after the loading state is complete
+    if (!isLoading) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      const sections = document.querySelectorAll('.section-fade');
+      sections.forEach(section => observer.observe(section));
+
+      return () => {
+        sections.forEach(section => observer.unobserve(section));
+      };
+    }
+  }, [isLoading]);
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
       {isLoading ? (

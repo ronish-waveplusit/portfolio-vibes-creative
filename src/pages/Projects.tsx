@@ -62,7 +62,7 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <div className="pt-24 pb-16">
+    <div className="pt-24 pb-16 animate-fade-in">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
           <SectionHeading 
@@ -71,12 +71,12 @@ const Projects = () => {
             centered
           />
           
-          <div className="mt-8 inline-flex flex-wrap justify-center gap-2 p-1 bg-secondary rounded-lg">
+          <div className="mt-8 inline-flex flex-wrap justify-center gap-2 p-1 bg-secondary/50 backdrop-blur-sm rounded-lg shadow-sm">
             <button
               onClick={() => setFilter("all")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
                 filter === "all" 
-                  ? "bg-primary text-primary-foreground" 
+                  ? "bg-primary text-primary-foreground shadow-sm" 
                   : "hover:bg-primary/10"
               }`}
             >
@@ -84,9 +84,9 @@ const Projects = () => {
             </button>
             <button
               onClick={() => setFilter("react")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
                 filter === "react" 
-                  ? "bg-primary text-primary-foreground" 
+                  ? "bg-primary text-primary-foreground shadow-sm" 
                   : "hover:bg-primary/10"
               }`}
             >
@@ -94,9 +94,9 @@ const Projects = () => {
             </button>
             <button
               onClick={() => setFilter("laravel")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
                 filter === "laravel" 
-                  ? "bg-primary text-primary-foreground" 
+                  ? "bg-primary text-primary-foreground shadow-sm" 
                   : "hover:bg-primary/10"
               }`}
             >
@@ -104,9 +104,9 @@ const Projects = () => {
             </button>
             <button
               onClick={() => setFilter("wordpress")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
                 filter === "wordpress" 
-                  ? "bg-primary text-primary-foreground" 
+                  ? "bg-primary text-primary-foreground shadow-sm" 
                   : "hover:bg-primary/10"
               }`}
             >

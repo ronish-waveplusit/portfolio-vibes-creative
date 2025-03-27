@@ -69,15 +69,15 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="section-fade">
-            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm p-6 md:p-8 h-full">
-              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+          <div className="animate-fade-in">
+            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-6 md:p-8 h-full border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300">
+              <h3 className="text-xl font-semibold mb-6 text-primary">Contact Information</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mr-4">
-                    <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                      <Phone className="h-5 w-5 text-secondary-foreground" />
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Phone className="h-5 w-5 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -88,8 +88,8 @@ const Contact = () => {
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mr-4">
-                    <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                      <Mail className="h-5 w-5 text-secondary-foreground" />
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Mail className="h-5 w-5 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -100,8 +100,8 @@ const Contact = () => {
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mr-4">
-                    <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                      <MapPin className="h-5 w-5 text-secondary-foreground" />
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <MapPin className="h-5 w-5 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -112,7 +112,7 @@ const Contact = () => {
               </div>
               
               <div className="mt-12">
-                <h3 className="text-xl font-semibold mb-6">Social Profiles</h3>
+                <h3 className="text-xl font-semibold mb-6 text-primary">Social Profiles</h3>
                 <div className="flex items-center space-x-4">
                   <a 
                     href="https://github.com/ronishprajapati" 
@@ -135,9 +135,9 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="section-fade">
-            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm p-6 md:p-8">
-              <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
+          <div className="animate-fade-in stagger-1">
+            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-6 md:p-8 border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300">
+              <h3 className="text-xl font-semibold mb-6 text-primary">Send a Message</h3>
               
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -189,7 +189,7 @@ const Contact = () => {
                         <FormControl>
                           <Textarea 
                             placeholder="Your message" 
-                            className="min-h-[120px]" 
+                            className="min-h-[120px] resize-none" 
                             {...field} 
                           />
                         </FormControl>
@@ -198,7 +198,7 @@ const Contact = () => {
                     )}
                   />
                   
-                  <Button type="submit" className="w-full">
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 transition-colors">
                     Send Message
                   </Button>
                 </form>

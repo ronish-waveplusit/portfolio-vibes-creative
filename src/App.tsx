@@ -10,28 +10,10 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
-import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    const sections = document.querySelectorAll('.section-fade');
-    sections.forEach(section => observer.observe(section));
-
-    return () => {
-      sections.forEach(section => observer.unobserve(section));
-    };
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

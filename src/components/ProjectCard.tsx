@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div 
       className={cn(
-        "project-card group relative overflow-hidden rounded-lg border bg-white dark:bg-gray-900 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md",
+        "group relative overflow-hidden rounded-lg border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl",
         className
       )}
     >
@@ -31,26 +31,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       
       <div className="p-6">
         <div className="flex items-start justify-between">
-          <h3 className="text-xl font-semibold">{title}</h3>
+          <h3 className="text-xl font-semibold text-foreground">{title}</h3>
           <a 
             href={url} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-1 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+            className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
             aria-label={`Visit ${title} website`}
           >
             <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
         
-        <p className="mt-2 text-muted-foreground text-sm">{description}</p>
+        <p className="mt-2 text-muted-foreground text-sm line-clamp-3">{description}</p>
         
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (

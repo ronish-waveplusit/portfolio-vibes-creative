@@ -165,6 +165,14 @@
   transform: translateY(0);
 }
 
+/* Fix: Ensure sections are visible by default on smaller devices */
+@media (max-width: 768px) {
+  .section-fade {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .project-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
