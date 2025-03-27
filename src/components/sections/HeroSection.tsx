@@ -18,11 +18,20 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-[90vh] flex flex-col items-center justify-center text-center px-4 relative">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-50/50 to-gray-100/50 dark:from-gray-900/50 dark:to-gray-950/50 -z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/50 to-gray-50/50 dark:from-gray-900/50 dark:to-gray-950/50 -z-10">
+        <div className="absolute -bottom-1 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent dark:from-gray-950 dark:to-transparent"></div>
+      </div>
+      
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-vibrant-purple/10 blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-vibrant-pink/10 blur-3xl"></div>
+      </div>
+      
       <div className="max-w-3xl mx-auto space-y-8">
-        <div className="flex flex-col items-center animate-fade-in">
+        <div className="flex flex-col items-center">
           <div className="mb-6 relative">
-            <div className="absolute -inset-1.5 bg-gradient-to-r from-gray-200 to-primary/30 rounded-full blur-sm"></div>
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-vibrant-purple to-vibrant-pink rounded-full blur-sm animate-pulse"></div>
             <img 
               src="/lovable-uploads/2e838f1a-7079-428c-8911-50a100582038.png" 
               alt="Ronish Prajapati"
@@ -38,12 +47,12 @@ const HeroSection = () => {
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-8 animate-fade-in stagger-3">
-            <Button asChild size="lg" className="rounded-full px-8">
+            <Button asChild size="lg" className="rounded-full px-8 bg-vibrant-purple hover:bg-vibrant-purple/90 glow-effect">
               <Link to="/projects">
                 View Projects <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full px-8">
+            <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-vibrant-pink text-vibrant-pink hover:bg-vibrant-pink/10">
               <Link to="/contact">
                 Contact Me
               </Link>
@@ -54,7 +63,7 @@ const HeroSection = () => {
               href="https://github.com/ronishprajapati" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-vibrant-purple hover:text-white transition-colors"
             >
               <Github className="h-5 w-5" />
             </a>
@@ -62,7 +71,7 @@ const HeroSection = () => {
               href="https://linkedin.com/in/ronish-prajapati" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-vibrant-blue hover:text-white transition-colors"
             >
               <Linkedin className="h-5 w-5" />
             </a>
@@ -70,7 +79,7 @@ const HeroSection = () => {
               href="mailto:ronishprajapati0@gmail.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-vibrant-pink hover:text-white transition-colors"
             >
               <Mail className="h-5 w-5" />
             </a>
@@ -79,7 +88,7 @@ const HeroSection = () => {
       </div>
       <button 
         onClick={handleScrollDown}
-        className="absolute bottom-12 animate-bounce p-3 rounded-full bg-white/80 text-primary shadow-md hover:bg-primary hover:text-primary-foreground transition-colors"
+        className="absolute bottom-12 animate-bounce p-3 rounded-full bg-white/80 text-vibrant-purple shadow-md hover:bg-vibrant-purple hover:text-white transition-colors"
         aria-label="Scroll down"
       >
         <ArrowDown className="h-5 w-5" />

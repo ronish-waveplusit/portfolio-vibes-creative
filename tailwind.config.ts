@@ -57,6 +57,12 @@ export default {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
         },
+        vibrant: {
+          purple: '#8B5CF6',
+          pink: '#D946EF',
+          orange: '#F97316',
+          blue: '#0EA5E9',
+        }
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],

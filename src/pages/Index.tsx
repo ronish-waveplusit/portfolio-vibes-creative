@@ -8,12 +8,20 @@ import ContactCTA from "@/components/sections/ContactCTA";
 
 const Index = () => {
   return (
-    <div className="pt-16">
+    <div className="pt-16 overflow-x-hidden">
       <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactCTA />
+      <div className="section-container">
+        <AboutSection />
+      </div>
+      <div className="section-container">
+        <SkillsSection />
+      </div>
+      <div className="section-container">
+        <ProjectsSection />
+      </div>
+      <div className="section-container">
+        <ContactCTA />
+      </div>
     </div>
   );
 };

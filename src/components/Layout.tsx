@@ -20,32 +20,12 @@ const Layout = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  useEffect(() => {
-    // Only set up the observer after the loading state is complete
-    if (!isLoading) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      const sections = document.querySelectorAll('.section-fade');
-      sections.forEach(section => observer.observe(section));
-
-      return () => {
-        sections.forEach(section => observer.unobserve(section));
-      };
-    }
-  }, [isLoading]);
-
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
       {isLoading ? (
         <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
           <div className="flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full border-4 border-primary border-t-transparent animate-spin mb-4"></div>
+            <div className="w-16 h-16 rounded-full border-4 border-primary border-t-transparent animate-spin mb-4 glow-effect"></div>
             <span className="text-primary font-medium">Loading...</span>
           </div>
         </div>
