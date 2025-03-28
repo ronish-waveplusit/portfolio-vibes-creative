@@ -9,12 +9,49 @@
   text-align: left;
 }
 
-/* Newari-inspired decorative elements can be added here */
+/* Newari-inspired decorative elements */
 .newari-divider {
   background-image: url('/lovable-uploads/newari-pattern.png');
   height: 20px;
   background-repeat: repeat-x;
   opacity: 0.2;
+}
+
+/* Wood carving pattern overlay */
+.newari-wood-pattern {
+  background-image: url('/lovable-uploads/wood-carving.png');
+  background-repeat: repeat;
+  opacity: 0.08;
+}
+
+/* Brick pattern for backgrounds */
+.newari-brick-pattern {
+  background-image: url('/lovable-uploads/brick-texture.png');
+  background-repeat: repeat;
+  opacity: 0.05;
+}
+
+/* Decorative borders inspired by Newari architecture */
+.newari-border {
+  border-image: linear-gradient(to right, var(--newari-red), var(--newari-gold), var(--newari-maroon)) 1;
+  border-width: 3px;
+  border-style: solid;
+}
+
+/* Festival-specific decorative elements */
+.indra-jatra-element {
+  background: linear-gradient(45deg, var(--newari-red), var(--newari-maroon));
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.biska-jatra-element {
+  background: linear-gradient(45deg, var(--newari-gold), var(--newari-amber));
+  clip-path: circle(50% at 50% 50%);
+}
+
+.yomari-punhi-element {
+  background: linear-gradient(45deg, var(--newari-brick), var(--newari-brown));
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
 
 /* Cultural color variables for easy reference */
@@ -25,4 +62,78 @@
   --newari-amber: #D97706;
   --newari-brick: #9A3412;
   --newari-brown: #78350F;
+}
+
+/* Festival banner with ornamental borders */
+.festival-banner {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(180, 83, 9, 0.05);
+  border: 1px solid rgba(180, 83, 9, 0.2);
+}
+
+.festival-banner::before,
+.festival-banner::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url('/lovable-uploads/newari-pattern.png');
+  background-size: cover;
+  opacity: 0.2;
+}
+
+.festival-banner::before {
+  top: -10px;
+  left: -10px;
+  transform: rotate(0deg);
+}
+
+.festival-banner::after {
+  bottom: -10px;
+  right: -10px;
+  transform: rotate(180deg);
+}
+
+/* Blog post styling with Newari motifs */
+.blog-content h2 {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.blog-content h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--newari-red), var(--newari-gold));
+}
+
+.blog-content blockquote {
+  border-left: 4px solid var(--newari-gold);
+  background-color: rgba(180, 83, 9, 0.05);
+  position: relative;
+}
+
+.blog-content blockquote::before,
+.blog-content blockquote::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--newari-gold);
+  opacity: 0.2;
+}
+
+.blog-content blockquote::before {
+  top: 0;
+  left: 0;
+}
+
+.blog-content blockquote::after {
+  bottom: 0;
+  left: 0;
 }

@@ -32,26 +32,26 @@ const Projects = () => {
       category: "wordpress"
     },
     {
-      title: "Bhaktapur Health Concern",
-      description: "A dynamic website for a health organization built with WordPress, providing health information and services to the community in the heart of Newari culture.",
+      title: "Bhaktapur Heritage Portal",
+      description: "A digital platform documenting the rich cultural heritage of Bhaktapur, focusing on traditional Newari architecture, temples, and wood carvings.",
       imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
-      tags: ["WordPress", "Healthcare"],
+      tags: ["WordPress", "Heritage", "Documentation"],
       url: "#",
       category: "wordpress"
     },
     {
-      title: "Newari Job Portal",
-      description: "A fully functional job portal built as a side project using Laravel, featuring jobs with a focus on preserving traditional arts and crafts in the Kathmandu Valley.",
+      title: "Newari Crafts Marketplace",
+      description: "An online marketplace connecting traditional Newari artisans with global customers, helping preserve ancient crafts while providing sustainable livelihoods.",
       imageUrl: "https://images.unsplash.com/photo-1573496358961-3c82861469cd?q=80&w=1000&auto=format&fit=crop",
-      tags: ["Laravel", "Job Board"],
+      tags: ["Laravel", "E-commerce"],
       url: "#",
       category: "laravel"
     },
     {
-      title: "Cultural Heritage Forms",
-      description: "Contributed to the development of dynamic form components for documenting intangible cultural heritage of the Newari community in Nepal.",
+      title: "Cultural Heritage Documentation",
+      description: "A comprehensive digital archive for documenting intangible cultural heritage of the Newari community in Nepal, featuring festivals, rituals, and traditions.",
       imageUrl: "https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=1000&auto=format&fit=crop",
-      tags: ["Laravel", "Forms", "Heritage"],
+      tags: ["Laravel", "Archive", "Heritage"],
       url: "#",
       category: "laravel"
     }
@@ -62,26 +62,39 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <div className="pt-24 pb-16 animate-fade-in bg-white dark:bg-gray-950 relative">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-[url('/lovable-uploads/newari-pattern.png')] bg-repeat -z-10"></div>
-      <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-amber-50/30 to-transparent dark:from-gray-900/30 dark:to-transparent -z-5"></div>
+    <div className="pt-24 pb-16 animate-fade-in relative">
+      {/* Newari decorative elements and background */}
+      <div className="absolute top-0 left-0 w-full h-16 bg-[url('/lovable-uploads/wood-carving.png')] bg-repeat-x opacity-10 dark:opacity-15"></div>
+      <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-[url('/lovable-uploads/brick-texture.png')] bg-repeat -z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-newari-gold/5 to-transparent dark:from-newari-gold/10 dark:to-transparent -z-5"></div>
       
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="text-center mb-12">
           <SectionHeading 
             title="My Projects" 
-            subtitle="A showcase of my development work, blending modern technology with cultural inspiration"
+            subtitle="A showcase of my development work, blending modern technology with Newari cultural inspiration"
             centered
           />
           
-          <div className="mt-8 inline-flex flex-wrap justify-center gap-2 p-1.5 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl shadow-sm border border-amber-100 dark:border-gray-800">
+          {/* Newari-inspired decorative element */}
+          <div className="my-8 relative">
+            <div className="h-24 w-24 mx-auto relative">
+              <div className="absolute inset-0 bg-newari-red/10 dark:bg-newari-red/20 rounded-full"></div>
+              <div className="absolute inset-2 border-2 border-dashed border-newari-gold/30 dark:border-newari-gold/40 rounded-full"></div>
+              <div className="absolute inset-4 bg-newari-gold/10 dark:bg-newari-gold/20 rounded-full flex items-center justify-center">
+                <span className="text-newari-maroon dark:text-newari-gold text-xl font-medium">{projects.length}</span>
+              </div>
+            </div>
+            <div className="mt-2 text-center text-sm text-newari-maroon dark:text-newari-gold/80">Total Projects</div>
+          </div>
+          
+          <div className="mt-8 inline-flex flex-wrap justify-center gap-2 p-1.5 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl shadow-sm border border-newari-gold/30 dark:border-newari-gold/20">
             <button
               onClick={() => setFilter("all")}
               className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
                 filter === "all" 
-                  ? "bg-amber-600 text-white shadow-sm" 
-                  : "hover:bg-amber-100 dark:hover:bg-amber-900/30"
+                  ? "bg-newari-red text-white shadow-sm" 
+                  : "hover:bg-newari-red/10 dark:hover:bg-newari-red/20"
               }`}
             >
               All Projects
@@ -90,8 +103,8 @@ const Projects = () => {
               onClick={() => setFilter("react")}
               className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
                 filter === "react" 
-                  ? "bg-amber-600 text-white shadow-sm" 
-                  : "hover:bg-amber-100 dark:hover:bg-amber-900/30"
+                  ? "bg-newari-red text-white shadow-sm" 
+                  : "hover:bg-newari-red/10 dark:hover:bg-newari-red/20"
               }`}
             >
               React
@@ -100,8 +113,8 @@ const Projects = () => {
               onClick={() => setFilter("laravel")}
               className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
                 filter === "laravel" 
-                  ? "bg-amber-600 text-white shadow-sm" 
-                  : "hover:bg-amber-100 dark:hover:bg-amber-900/30"
+                  ? "bg-newari-red text-white shadow-sm" 
+                  : "hover:bg-newari-red/10 dark:hover:bg-newari-red/20"
               }`}
             >
               Laravel
@@ -110,8 +123,8 @@ const Projects = () => {
               onClick={() => setFilter("wordpress")}
               className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
                 filter === "wordpress" 
-                  ? "bg-amber-600 text-white shadow-sm" 
-                  : "hover:bg-amber-100 dark:hover:bg-amber-900/30"
+                  ? "bg-newari-red text-white shadow-sm" 
+                  : "hover:bg-newari-red/10 dark:hover:bg-newari-red/20"
               }`}
             >
               WordPress
@@ -128,7 +141,7 @@ const Projects = () => {
               imageUrl={project.imageUrl}
               tags={project.tags}
               url={project.url}
-              className="border-amber-100 dark:border-gray-800 hover:border-amber-300 dark:hover:border-amber-800"
+              className="border-newari-gold/20 dark:border-newari-gold/10 hover:border-newari-gold/50 dark:hover:border-newari-gold/30"
             />
           ))}
         </div>
