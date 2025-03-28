@@ -24,34 +24,34 @@ const Projects = () => {
       category: "react"
     },
     {
-      title: "Visit Imadhyapur",
-      description: "Tourism website built with WordPress showcasing local destinations and attractions. Designed to promote tourism in the Madhyapur region with an emphasis on cultural heritage.",
+      title: "Visit Madhyapur",
+      description: "Tourism website built with WordPress showcasing local destinations and Newari cultural heritage. Designed to promote tourism in the Madhyapur region of Bhaktapur.",
       imageUrl: "https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=1000&auto=format&fit=crop",
-      tags: ["WordPress", "Tourism"],
+      tags: ["WordPress", "Tourism", "Culture"],
       url: "https://visitimadhyapur.com",
       category: "wordpress"
     },
     {
       title: "Bhaktapur Health Concern",
-      description: "A dynamic website for a health organization built with WordPress, providing health information and services to the community.",
+      description: "A dynamic website for a health organization built with WordPress, providing health information and services to the community in the heart of Newari culture.",
       imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
       tags: ["WordPress", "Healthcare"],
       url: "#",
       category: "wordpress"
     },
     {
-      title: "Job Portal",
-      description: "A fully functional job portal built as a side project using Laravel and Blade components, featuring job listings, user authentication, and an application submission system.",
+      title: "Newari Job Portal",
+      description: "A fully functional job portal built as a side project using Laravel, featuring jobs with a focus on preserving traditional arts and crafts in the Kathmandu Valley.",
       imageUrl: "https://images.unsplash.com/photo-1573496358961-3c82861469cd?q=80&w=1000&auto=format&fit=crop",
       tags: ["Laravel", "Job Board"],
       url: "#",
       category: "laravel"
     },
     {
-      title: "FAO Nepal Forms",
-      description: "Contributed to the development of dynamic form components for the FAO Nepal website, improving data collection and processing capabilities.",
+      title: "Cultural Heritage Forms",
+      description: "Contributed to the development of dynamic form components for documenting intangible cultural heritage of the Newari community in Nepal.",
       imageUrl: "https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=1000&auto=format&fit=crop",
-      tags: ["Laravel", "Forms"],
+      tags: ["Laravel", "Forms", "Heritage"],
       url: "#",
       category: "laravel"
     }
@@ -62,52 +62,56 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <div className="pt-24 pb-16 animate-fade-in">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <div className="pt-24 pb-16 animate-fade-in bg-white dark:bg-gray-950 relative">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-[url('/lovable-uploads/newari-pattern.png')] bg-repeat -z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-amber-50/30 to-transparent dark:from-gray-900/30 dark:to-transparent -z-5"></div>
+      
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="text-center mb-12">
           <SectionHeading 
             title="My Projects" 
-            subtitle="Here's a collection of projects I've worked on, showcasing my skills and experience."
+            subtitle="A showcase of my development work, blending modern technology with cultural inspiration"
             centered
           />
           
-          <div className="mt-8 inline-flex flex-wrap justify-center gap-2 p-1 bg-secondary/50 backdrop-blur-sm rounded-lg shadow-sm">
+          <div className="mt-8 inline-flex flex-wrap justify-center gap-2 p-1.5 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl shadow-sm border border-amber-100 dark:border-gray-800">
             <button
               onClick={() => setFilter("all")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
                 filter === "all" 
-                  ? "bg-primary text-primary-foreground shadow-sm" 
-                  : "hover:bg-primary/10"
+                  ? "bg-amber-600 text-white shadow-sm" 
+                  : "hover:bg-amber-100 dark:hover:bg-amber-900/30"
               }`}
             >
               All Projects
             </button>
             <button
               onClick={() => setFilter("react")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
                 filter === "react" 
-                  ? "bg-primary text-primary-foreground shadow-sm" 
-                  : "hover:bg-primary/10"
+                  ? "bg-amber-600 text-white shadow-sm" 
+                  : "hover:bg-amber-100 dark:hover:bg-amber-900/30"
               }`}
             >
               React
             </button>
             <button
               onClick={() => setFilter("laravel")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
                 filter === "laravel" 
-                  ? "bg-primary text-primary-foreground shadow-sm" 
-                  : "hover:bg-primary/10"
+                  ? "bg-amber-600 text-white shadow-sm" 
+                  : "hover:bg-amber-100 dark:hover:bg-amber-900/30"
               }`}
             >
               Laravel
             </button>
             <button
               onClick={() => setFilter("wordpress")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
                 filter === "wordpress" 
-                  ? "bg-primary text-primary-foreground shadow-sm" 
-                  : "hover:bg-primary/10"
+                  ? "bg-amber-600 text-white shadow-sm" 
+                  : "hover:bg-amber-100 dark:hover:bg-amber-900/30"
               }`}
             >
               WordPress
@@ -124,6 +128,7 @@ const Projects = () => {
               imageUrl={project.imageUrl}
               tags={project.tags}
               url={project.url}
+              className="border-amber-100 dark:border-gray-800 hover:border-amber-300 dark:hover:border-amber-800"
             />
           ))}
         </div>

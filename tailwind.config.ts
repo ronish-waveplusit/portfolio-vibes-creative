@@ -62,6 +62,14 @@ export default {
           pink: '#D946EF',
           orange: '#F97316',
           blue: '#0EA5E9',
+        },
+        newari: {
+          red: '#B91C1C',
+          maroon: '#7F1D1D',
+          gold: '#B45309',
+          amber: '#D97706',
+          brick: '#9A3412',
+          brown: '#78350F',
         }
       },
       fontFamily: {
@@ -85,6 +93,11 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
+      },
+      backgroundImage: {
+        'newari-pattern': "url('/lovable-uploads/newari-pattern.png')",
+        'brick-texture': "url('/lovable-uploads/brick-texture.png')",
+        'wood-carving': "url('/lovable-uploads/wood-carving.png')",
       }
     }
   },

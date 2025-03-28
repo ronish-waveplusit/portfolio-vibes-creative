@@ -8,16 +8,16 @@ import SkillBadge from "@/components/SkillBadge";
 
 const AboutSection = () => {
   const skills = [
-    "Himalayan Treks", "Cultural Heritage", "Local Cuisine", "Photography", 
-    "Travel Writing", "Storytelling", "Adventure Tours", "Sustainable Tourism",
-    "Nepali History", "Buddhist Culture"
+    "Web Development", "Mobile Apps", "UI/UX Design", "React", 
+    "Laravel", "WordPress", "Node.js", "MongoDB", "MySQL",
+    "JavaScript", "TypeScript", "PHP"
   ];
 
   return (
     <section className="py-24 px-4 section-fade relative overflow-hidden">
-      {/* Cultural decorative elements */}
-      <div className="absolute -left-16 top-24 w-32 h-32 rounded-full bg-vibrant-orange/10 blur-3xl"></div>
-      <div className="absolute -right-16 bottom-24 w-32 h-32 rounded-full bg-vibrant-blue/10 blur-3xl"></div>
+      {/* Newari decorative elements */}
+      <div className="absolute -left-16 top-24 w-32 h-32 rounded-full bg-amber-600/10 blur-3xl"></div>
+      <div className="absolute -right-16 bottom-24 w-32 h-32 rounded-full bg-red-800/10 blur-3xl"></div>
       
       {/* Mandala-inspired decorative pattern */}
       <div className="absolute right-0 top-0 w-48 h-48 opacity-5 dark:opacity-10">
@@ -32,46 +32,49 @@ const AboutSection = () => {
       <div className="container mx-auto max-w-5xl">
         <SectionHeading 
           title="About Me" 
-          subtitle="I'm a passionate travel writer and photographer dedicated to sharing Nepal's rich cultural heritage and breathtaking landscapes."
+          subtitle="I'm a passionate developer with deep roots in Newari culture, combining modern technology with traditional values."
           centered
         />
-        <div className="mt-12 bg-white dark:bg-gray-900/60 rounded-2xl shadow-xl p-8 md:p-10 space-y-6 backdrop-blur-sm border border-primary/5">
+        <div className="mt-12 bg-white dark:bg-gray-900/60 rounded-2xl shadow-xl p-8 md:p-10 space-y-6 backdrop-blur-sm border border-amber-600/10 relative">
+          {/* Decorative border inspired by Newari wood carvings */}
+          <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-amber-700 via-red-800 to-amber-700 rounded-t-2xl"></div>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-2">
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Born and raised among the foothills of the Himalayas, I've spent the last five years exploring the hidden treasures of Nepal - from the ancient temples of Kathmandu Valley to the majestic peaks of the Everest region. My passion is documenting these journeys and sharing the rich cultural tapestry that makes Nepal a truly unique destination.
+                Born and raised in the cultural heart of Nepal, I've been surrounded by the intricate artistry and traditions of Newari culture. This heritage has inspired my approach to development and design, where attention to detail and craftsmanship are paramount, much like the elaborate wood carvings found in traditional Newari architecture.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Through my writing and photography, I aim to showcase not only the stunning landscapes but also the rich traditions, vibrant festivals, and warm hospitality of the Nepali people. Join me as we journey through ancient cities, remote mountain villages, and sacred Buddhist and Hindu sites.
+                As a developer, I bring the same dedication to my work that Newari artisans bring to their craft. I specialize in creating responsive web applications that combine modern functionality with aesthetic appeal. My cultural background has given me a unique perspective that influences my design sensibilities, resulting in work that stands out while remaining intuitive and user-friendly.
               </p>
             </div>
             <div className="flex flex-col justify-center items-center gap-4">
-              <div className="flex items-center gap-3 bg-secondary/50 p-4 rounded-lg w-full">
-                <Mountain className="h-8 w-8 text-vibrant-blue" />
+              <div className="flex items-center gap-3 bg-secondary/50 p-4 rounded-lg w-full border-l-4 border-amber-600">
+                <Mountain className="h-8 w-8 text-amber-600" />
                 <div>
-                  <h4 className="font-medium">Trekking Expert</h4>
-                  <p className="text-sm text-muted-foreground">50+ treks completed</p>
+                  <h4 className="font-medium">Frontend Expert</h4>
+                  <p className="text-sm text-muted-foreground">React & Modern JS</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 bg-secondary/50 p-4 rounded-lg w-full">
-                <Compass className="h-8 w-8 text-vibrant-orange" />
+              <div className="flex items-center gap-3 bg-secondary/50 p-4 rounded-lg w-full border-l-4 border-red-800">
+                <Compass className="h-8 w-8 text-red-800" />
                 <div>
-                  <h4 className="font-medium">Cultural Guide</h4>
-                  <p className="text-sm text-muted-foreground">Deep local knowledge</p>
+                  <h4 className="font-medium">Backend Developer</h4>
+                  <p className="text-sm text-muted-foreground">Laravel & Node.js</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 bg-secondary/50 p-4 rounded-lg w-full">
-                <BookOpen className="h-8 w-8 text-vibrant-purple" />
+              <div className="flex items-center gap-3 bg-secondary/50 p-4 rounded-lg w-full border-l-4 border-amber-700">
+                <BookOpen className="h-8 w-8 text-amber-700" />
                 <div>
-                  <h4 className="font-medium">Published Writer</h4>
-                  <p className="text-sm text-muted-foreground">200+ travel articles</p>
+                  <h4 className="font-medium">Cultural Designer</h4>
+                  <p className="text-sm text-muted-foreground">UI/UX with heritage</p>
                 </div>
               </div>
             </div>
           </div>
           
           <div className="pt-8 border-t border-primary/5">
-            <h3 className="text-lg font-semibold mb-4">Areas of Expertise</h3>
+            <h3 className="text-lg font-semibold mb-4">Technical Skills</h3>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill) => (
                 <SkillBadge key={skill} skill={skill} />
@@ -79,7 +82,7 @@ const AboutSection = () => {
             </div>
           </div>
           <div className="pt-6">
-            <Button asChild className="rounded-full px-6 bg-gradient-to-r from-vibrant-orange to-vibrant-purple hover:opacity-90">
+            <Button asChild className="rounded-full px-6 bg-gradient-to-r from-amber-600 to-red-800 hover:opacity-90">
               <Link to="/about">
                 Learn More <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
