@@ -58,155 +58,204 @@ const Contact = () => {
   }
 
   return (
-    <div className="pt-24 pb-16">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-12 animate-fade-in">
-          <SectionHeading 
-            title="Get in Touch" 
-            subtitle="Have a question or want to work together? Feel free to reach out."
-            centered
-          />
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="animate-fade-in">
-            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-6 md:p-8 h-full border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl font-semibold mb-6 text-primary">Contact Information</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Phone className="h-5 w-5 text-primary" />
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-muted-foreground mb-1">Phone</h4>
-                    <p className="font-medium">9769378424</p>
-                  </div>
-                </div>
+    <div className="min-h-screen relative bg-[url('/lovable-uploads/brick-texture.png')] bg-repeat bg-fixed">
+      {/* Traditional Newari wooden window frame at the top */}
+      <div className="absolute top-0 left-0 w-full h-24 bg-[url('/lovable-uploads/wood-carving.png')] bg-repeat-x opacity-20"></div>
+      
+      <div className="pt-32 pb-16 px-4 relative">
+        <div className="max-w-6xl mx-auto">
+          {/* Newari temple-inspired header section */}
+          <div className="text-center mb-16 relative">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-24 bg-newari-brick opacity-10 rounded-t-3xl"></div>
+            <div className="relative z-10 pb-6">
+              <h1 className="text-4xl font-bold text-newari-maroon mb-4">Get in Touch</h1>
+              <div className="w-24 h-1 bg-gradient-to-r from-newari-gold to-newari-red mx-auto"></div>
+              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">Have a question or want to work together? Feel free to reach out.</p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-20">
+            {/* Contact info column with traditional Newari door frame design */}
+            <div className="lg:col-span-2">
+              <div className="bg-white/95 dark:bg-gray-900/95 rounded-lg overflow-hidden shadow-lg relative">
+                {/* Newari door frame decorative elements */}
+                <div className="absolute top-0 left-0 w-full h-6 bg-gradient-to-r from-newari-maroon via-newari-gold to-newari-red"></div>
+                <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-r from-newari-maroon via-newari-gold to-newari-red"></div>
+                <div className="absolute top-6 left-0 w-6 h-[calc(100%-12px)] bg-gradient-to-b from-newari-gold via-newari-amber to-newari-gold"></div>
+                <div className="absolute top-6 right-0 w-6 h-[calc(100%-12px)] bg-gradient-to-b from-newari-gold via-newari-amber to-newari-gold"></div>
                 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Mail className="h-5 w-5 text-primary" />
+                <div className="p-10 m-6">
+                  <h3 className="text-2xl font-bold text-newari-brick mb-8">Contact Information</h3>
+                  
+                  <div className="space-y-8">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 mr-5">
+                        <div className="w-12 h-12 rounded-full bg-newari-gold/20 flex items-center justify-center">
+                          <Phone className="h-5 w-5 text-newari-gold" />
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-medium text-muted-foreground mb-1">Phone</h4>
+                        <p className="font-medium text-lg">9769378424</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 mr-5">
+                        <div className="w-12 h-12 rounded-full bg-newari-gold/20 flex items-center justify-center">
+                          <Mail className="h-5 w-5 text-newari-gold" />
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-medium text-muted-foreground mb-1">Email</h4>
+                        <p className="font-medium text-lg">ronishprajapati0@gmail.com</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 mr-5">
+                        <div className="w-12 h-12 rounded-full bg-newari-gold/20 flex items-center justify-center">
+                          <MapPin className="h-5 w-5 text-newari-gold" />
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-medium text-muted-foreground mb-1">Location</h4>
+                        <p className="font-medium text-lg">Gwarko, Lalitpur</p>
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-muted-foreground mb-1">Email</h4>
-                    <p className="font-medium">ronishprajapati0@gmail.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <MapPin className="h-5 w-5 text-primary" />
+                  
+                  <div className="mt-12 pt-8 border-t border-newari-gold/20">
+                    <h3 className="text-xl font-bold text-newari-brick mb-6">Social Profiles</h3>
+                    <div className="flex items-center space-x-5">
+                      <a 
+                        href="https://github.com/ronishprajapati" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 rounded-full bg-newari-red/10 flex items-center justify-center text-newari-red hover:bg-newari-red hover:text-white transition-colors"
+                      >
+                        <Github className="h-6 w-6" />
+                      </a>
+                      <a 
+                        href="https://linkedin.com/in/ronish-prajapati" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 rounded-full bg-newari-red/10 flex items-center justify-center text-newari-red hover:bg-newari-red hover:text-white transition-colors"
+                      >
+                        <Linkedin className="h-6 w-6" />
+                      </a>
                     </div>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-muted-foreground mb-1">Location</h4>
-                    <p className="font-medium">Gwarko, Lalitpur</p>
                   </div>
                 </div>
               </div>
-              
-              <div className="mt-12">
-                <h3 className="text-xl font-semibold mb-6 text-primary">Social Profiles</h3>
-                <div className="flex items-center space-x-4">
-                  <a 
-                    href="https://github.com/ronishprajapati" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    <Github className="h-5 w-5" />
-                  </a>
-                  <a 
-                    href="https://linkedin.com/in/ronish-prajapati" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
+            </div>
+            
+            {/* Contact form column with Newari scroll design */}
+            <div className="lg:col-span-3">
+              <div className="bg-white/95 dark:bg-gray-900/95 rounded-lg shadow-lg relative overflow-hidden">
+                {/* Newari scroll design elements */}
+                <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-r from-newari-brick to-newari-brown opacity-80"></div>
+                <div className="absolute top-8 right-0 w-8 h-8 rounded-full bg-newari-red opacity-70"></div>
+                <div className="absolute top-8 left-0 w-8 h-8 rounded-full bg-newari-red opacity-70"></div>
+                
+                <div className="p-10 mt-8">
+                  <h3 className="text-2xl font-bold text-newari-brick mb-8">Send a Message</h3>
+                  
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <FormField
+                          control={form.control}
+                          name="name"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-newari-brick">Name</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  placeholder="Your name" 
+                                  {...field} 
+                                  className="border-newari-gold/30 focus-visible:ring-newari-gold/50"
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-newari-brick">Email</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  placeholder="Your email" 
+                                  {...field} 
+                                  className="border-newari-gold/30 focus-visible:ring-newari-gold/50"
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                      <FormField
+                        control={form.control}
+                        name="subject"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-newari-brick">Subject</FormLabel>
+                            <FormControl>
+                              <Input 
+                                placeholder="Message subject" 
+                                {...field} 
+                                className="border-newari-gold/30 focus-visible:ring-newari-gold/50"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-newari-brick">Message</FormLabel>
+                            <FormControl>
+                              <Textarea 
+                                placeholder="Your message" 
+                                className="min-h-[150px] resize-none border-newari-gold/30 focus-visible:ring-newari-gold/50" 
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <Button 
+                        type="submit" 
+                        className="w-full bg-gradient-to-r from-newari-brick to-newari-maroon hover:from-newari-maroon hover:to-newari-brick text-white py-6 text-lg"
+                      >
+                        Send Message
+                      </Button>
+                    </form>
+                  </Form>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="animate-fade-in stagger-1">
-            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-6 md:p-8 border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl font-semibold mb-6 text-primary">Send a Message</h3>
-              
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your name" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your email" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Message subject" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Your message" 
-                            className="min-h-[120px] resize-none" 
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 transition-colors">
-                    Send Message
-                  </Button>
-                </form>
-              </Form>
-            </div>
+          {/* Newari decorative footer element */}
+          <div className="flex justify-center">
+            <div className="w-24 h-24 yomari-punhi-element opacity-50"></div>
           </div>
         </div>
       </div>
+      
+      {/* Traditional Newari wooden frame at the bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-[url('/lovable-uploads/wood-carving.png')] bg-repeat-x opacity-20 transform rotate-180"></div>
     </div>
   );
 };

@@ -8,67 +8,95 @@ import ContactCTA from "@/components/sections/ContactCTA";
 
 // Newari decorative separator component inspired by traditional wood carvings
 const NewariSeparator = () => (
-  <div className="flex items-center justify-center py-8">
-    <div className="h-px w-full max-w-md bg-gradient-to-r from-transparent via-newari-gold to-transparent"></div>
-    <div className="mx-4">
-      <svg className="w-12 h-12 text-newari-red" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L14.4 8.09L21 9.4L16.5 14.01L17.6 20.6L12 17.5L6.4 20.6L7.5 14.01L3 9.4L9.6 8.09L12 2Z" />
-        <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" strokeWidth="1" />
-        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1" />
-      </svg>
+  <div className="relative py-16">
+    <div className="newari-divider absolute top-0 left-0 right-0"></div>
+    <div className="newari-divider absolute bottom-0 left-0 right-0 transform rotate-180"></div>
+    
+    <div className="flex items-center justify-center">
+      <div className="h-px w-full max-w-md bg-gradient-to-r from-transparent via-newari-gold to-transparent"></div>
+      <div className="mx-4 relative">
+        <div className="w-16 h-16 indra-jatra-element"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-6 h-6 biska-jatra-element"></div>
+        </div>
+      </div>
+      <div className="h-px w-full max-w-md bg-gradient-to-r from-transparent via-newari-gold to-transparent"></div>
     </div>
-    <div className="h-px w-full max-w-md bg-gradient-to-r from-transparent via-newari-gold to-transparent"></div>
   </div>
 );
 
-// Traditional Newari festival banner component
+// Traditional Newari festival banner component with authentic design elements
 const FestivalBanner = () => (
-  <div className="relative py-4 px-6 md:px-12 my-6 overflow-hidden bg-newari-brick/10 rounded-lg border border-newari-gold/30">
-    <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('/lovable-uploads/newari-pattern.png')] bg-repeat"></div>
-    <div className="relative z-10 text-center">
-      <h3 className="text-xl md:text-2xl font-semibold text-newari-maroon mb-2">Celebrating Newari Festivals</h3>
-      <p className="text-sm md:text-base text-gray-700 dark:text-gray-300">
-        From the chariot processions of Indra Jatra to the intricate masks of Biska Jatra and sweet
-        Yomari during Yomari Punhi - our heritage influences my creative approach
-      </p>
+  <div className="newari-door-frame my-12 mx-4 md:mx-12">
+    <div className="relative py-8 px-6 md:px-12 overflow-hidden bg-newari-brick/10 rounded-lg">
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('/lovable-uploads/newari-pattern.png')] bg-repeat"></div>
+      
+      {/* Traditional corner decorations inspired by temple architecture */}
+      <div className="absolute top-0 left-0 w-16 h-16 bg-[url('/lovable-uploads/wood-carving.png')] bg-no-repeat bg-cover opacity-15"></div>
+      <div className="absolute top-0 right-0 w-16 h-16 bg-[url('/lovable-uploads/wood-carving.png')] bg-no-repeat bg-cover opacity-15 transform rotate-90"></div>
+      <div className="absolute bottom-0 left-0 w-16 h-16 bg-[url('/lovable-uploads/wood-carving.png')] bg-no-repeat bg-cover opacity-15 transform -rotate-90"></div>
+      <div className="absolute bottom-0 right-0 w-16 h-16 bg-[url('/lovable-uploads/wood-carving.png')] bg-no-repeat bg-cover opacity-15 transform rotate-180"></div>
+      
+      <div className="relative z-10 text-center">
+        <div className="flex justify-center space-x-12 mb-6">
+          <div className="w-12 h-12 indra-jatra-element"></div>
+          <div className="w-12 h-12 biska-jatra-element"></div>
+          <div className="w-12 h-12 yomari-punhi-element"></div>
+        </div>
+        
+        <h3 className="text-2xl md:text-3xl font-bold text-newari-brick dark:text-newari-gold mb-4">Celebrating Newari Festivals</h3>
+        <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          From the chariot processions of Indra Jatra to the intricate masks of Biska Jatra and sweet
+          Yomari during Yomari Punhi - our heritage influences my creative approach and digital craftsmanship,
+          blending tradition with modern technology.
+        </p>
+      </div>
     </div>
   </div>
 );
 
 const Index = () => {
   return (
-    <div className="pt-16 overflow-x-hidden bg-[url('/lovable-uploads/brick-texture-light.png')] bg-fixed bg-opacity-5 dark:bg-gray-950">
-      {/* Cultural background pattern - brick texture from Newari architecture */}
+    <div className="relative overflow-x-hidden bg-[url('/lovable-uploads/brick-texture-light.png')] bg-fixed bg-opacity-5 dark:bg-gray-950">
+      {/* Cultural background pattern - brick texture from Newari architecture with layered effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-amber-50/30 to-white/10 dark:from-gray-900/30 dark:to-gray-950/10 z-0"></div>
       
       {/* Traditional Newari architectural elements as decorative border */}
-      <div className="absolute top-0 left-0 w-full h-16 bg-[url('/lovable-uploads/wood-carving.png')] bg-repeat-x opacity-10 dark:opacity-15"></div>
+      <div className="absolute top-0 left-0 w-full h-24 bg-[url('/lovable-uploads/wood-carving.png')] bg-repeat-x opacity-10 dark:opacity-15"></div>
       
-      <HeroSection />
-      <NewariSeparator />
-      
-      <div className="section-container relative z-10 px-4 md:px-8">
-        <FestivalBanner />
-        <AboutSection />
+      {/* Main content sections with Newari-inspired spacing and decoration */}
+      <div className="pt-16 relative z-10">
+        {/* Hero section with Newari-inspired background elements */}
+        <HeroSection />
+        
+        <NewariSeparator />
+        
+        <div className="section-container relative z-10">
+          <FestivalBanner />
+          <AboutSection />
+        </div>
+        
+        <NewariSeparator />
+        
+        <div className="section-container relative z-10 px-4 md:px-8">
+          <SkillsSection />
+        </div>
+        
+        <NewariSeparator />
+        
+        <div className="section-container relative z-10 px-4 md:px-8">
+          <ProjectsSection />
+        </div>
+        
+        <NewariSeparator />
+        
+        <div className="section-container relative z-10 px-4 md:px-8">
+          <ContactCTA />
+        </div>
+        
+        {/* Traditional Newari architectural elements as decorative footer border */}
+        <div className="relative h-16 w-full bg-[url('/lovable-uploads/wood-carving.png')] bg-repeat-x opacity-10 dark:opacity-15 transform rotate-180"></div>
       </div>
-      <NewariSeparator />
-      
-      <div className="section-container relative z-10 px-4 md:px-8">
-        <SkillsSection />
-      </div>
-      <NewariSeparator />
-      
-      <div className="section-container relative z-10 px-4 md:px-8">
-        <ProjectsSection />
-      </div>
-      <NewariSeparator />
-      
-      <div className="section-container relative z-10 px-4 md:px-8">
-        <ContactCTA />
-      </div>
-      
-      {/* Traditional Newari architectural elements as decorative footer border */}
-      <div className="relative h-12 w-full bg-[url('/lovable-uploads/wood-carving.png')] bg-repeat-x opacity-10 dark:opacity-15 transform rotate-180"></div>
     </div>
   );
 };
