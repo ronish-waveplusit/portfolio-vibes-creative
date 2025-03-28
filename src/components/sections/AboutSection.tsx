@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Mountains, Compass, BookOpen } from "lucide-react";
+import { ArrowRight, Mountain, Compass, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import SkillBadge from "@/components/SkillBadge";
@@ -47,7 +47,7 @@ const AboutSection = () => {
             </div>
             <div className="flex flex-col justify-center items-center gap-4">
               <div className="flex items-center gap-3 bg-secondary/50 p-4 rounded-lg w-full">
-                <Mountains className="h-8 w-8 text-vibrant-blue" />
+                <Mountain className="h-8 w-8 text-vibrant-blue" />
                 <div>
                   <h4 className="font-medium">Trekking Expert</h4>
                   <p className="text-sm text-muted-foreground">50+ treks completed</p>
