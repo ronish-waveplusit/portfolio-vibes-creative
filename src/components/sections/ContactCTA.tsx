@@ -7,16 +7,11 @@ import SectionHeading from "@/components/SectionHeading";
 
 const ContactCTA = () => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
-      {/* Vibrant background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-vibrant-blue/5 to-vibrant-purple/10 -z-10"></div>
-      
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-vibrant-purple/10 blur-3xl"></div>
-        <div className="absolute -bottom-10 -right-10 w-72 h-72 rounded-full bg-vibrant-pink/10 blur-3xl"></div>
-        <div className="absolute top-1/3 right-1/4 w-48 h-48 rounded-full bg-vibrant-orange/10 blur-3xl"></div>
-      </div>
+    <section className="py-24 px-4 relative overflow-hidden bg-[url('/lovable-uploads/brick-texture.png')] bg-repeat bg-opacity-5">
+      {/* Traditional decorative divider at top */}
+      <div className="absolute top-0 left-0 w-full h-4 bg-[#9A3412]" style={{
+        clipPath: "polygon(0% 100%, 5% 0%, 10% 100%, 15% 0%, 20% 100%, 25% 0%, 30% 100%, 35% 0%, 40% 100%, 45% 0%, 50% 100%, 55% 0%, 60% 100%, 65% 0%, 70% 100%, 75% 0%, 80% 100%, 85% 0%, 90% 100%, 95% 0%, 100% 100%)"
+      }}></div>
       
       <div className="container mx-auto max-w-4xl text-center relative z-10">
         <SectionHeading 
@@ -24,12 +19,17 @@ const ContactCTA = () => {
           subtitle="Have a project in mind? I'd love to help you bring it to life."
           centered
         />
-        <Button asChild size="lg" className="mt-8 rounded-full px-10 py-6 text-lg bg-gradient-to-r from-vibrant-purple to-vibrant-pink hover:from-vibrant-pink hover:to-vibrant-purple transition-all duration-300 shadow-lg hover:shadow-xl">
+        <Button asChild size="lg" className="mt-8 px-10 py-6 text-lg bg-[#9A3412] hover:bg-[#7F1D1D] text-white border-0">
           <Link to="/contact">
             Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </Button>
       </div>
+      
+      {/* Traditional decorative divider at bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-4 bg-[#9A3412]" style={{
+        clipPath: "polygon(0% 0%, 5% 100%, 10% 0%, 15% 100%, 20% 0%, 25% 100%, 30% 0%, 35% 100%, 40% 0%, 45% 100%, 50% 0%, 55% 100%, 60% 0%, 65% 100%, 70% 0%, 75% 100%, 80% 0%, 85% 100%, 90% 0%, 95% 100%, 100% 0%)"
+      }}></div>
     </section>
   );
 };

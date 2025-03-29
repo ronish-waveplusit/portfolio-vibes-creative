@@ -18,27 +18,20 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-[90vh] flex flex-col items-center justify-center text-center px-4 relative">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/50 to-gray-50/50 dark:from-gray-900/50 dark:to-gray-950/50 -z-10">
-        <div className="absolute -bottom-1 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent dark:from-gray-950 dark:to-transparent"></div>
-      </div>
-      
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-vibrant-purple/10 blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-vibrant-pink/10 blur-3xl"></div>
-      </div>
+      {/* Traditional Newari background pattern */}
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/newari-pattern.png')] bg-repeat opacity-[0.03]"></div>
       
       <div className="max-w-3xl mx-auto space-y-8">
         <div className="flex flex-col items-center">
           <div className="mb-6 relative">
-            <div className="absolute -inset-1.5 bg-gradient-to-r from-vibrant-purple to-vibrant-pink rounded-full blur-sm animate-pulse"></div>
+            <div className="absolute -inset-1.5 bg-[#9A3412] rounded-full blur-sm animate-pulse"></div>
             <img 
               src="/lovable-uploads/2e838f1a-7079-428c-8911-50a100582038.png" 
               alt="Ronish Prajapati"
               className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg relative"
             />
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-slide-in-left stagger-1">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#7F1D1D] animate-slide-in-left stagger-1">
             Ronish Prajapati
           </h1>
           <div className="h-12">
@@ -47,12 +40,12 @@ const HeroSection = () => {
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-8 animate-fade-in stagger-3">
-            <Button asChild size="lg" className="rounded-full px-8 bg-vibrant-purple hover:bg-vibrant-purple/90 glow-effect">
+            <Button asChild size="lg" className="rounded-none px-8 bg-[#9A3412] hover:bg-[#7F1D1D] text-white border-0">
               <Link to="/projects">
                 View Projects <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-vibrant-pink text-vibrant-pink hover:bg-vibrant-pink/10">
+            <Button asChild variant="outline" size="lg" className="rounded-none px-8 border-[#9A3412] text-[#7F1D1D] hover:bg-[#9A3412]/10">
               <Link to="/contact">
                 Contact Me
               </Link>
@@ -63,7 +56,7 @@ const HeroSection = () => {
               href="https://github.com/ronishprajapati" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-vibrant-purple hover:text-white transition-colors"
+              className="p-3 rounded-full bg-[#9A3412]/10 text-[#9A3412] hover:bg-[#9A3412] hover:text-white transition-colors"
             >
               <Github className="h-5 w-5" />
             </a>
@@ -71,7 +64,7 @@ const HeroSection = () => {
               href="https://linkedin.com/in/ronish-prajapati" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-vibrant-blue hover:text-white transition-colors"
+              className="p-3 rounded-full bg-[#9A3412]/10 text-[#9A3412] hover:bg-[#9A3412] hover:text-white transition-colors"
             >
               <Linkedin className="h-5 w-5" />
             </a>
@@ -79,7 +72,7 @@ const HeroSection = () => {
               href="mailto:ronishprajapati0@gmail.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-vibrant-pink hover:text-white transition-colors"
+              className="p-3 rounded-full bg-[#9A3412]/10 text-[#9A3412] hover:bg-[#9A3412] hover:text-white transition-colors"
             >
               <Mail className="h-5 w-5" />
             </a>
@@ -88,7 +81,7 @@ const HeroSection = () => {
       </div>
       <button 
         onClick={handleScrollDown}
-        className="absolute bottom-12 animate-bounce p-3 rounded-full bg-white/80 text-vibrant-purple shadow-md hover:bg-vibrant-purple hover:text-white transition-colors"
+        className="absolute bottom-12 animate-bounce p-3 rounded-full bg-white text-[#9A3412] shadow-md hover:bg-[#9A3412] hover:text-white transition-colors"
         aria-label="Scroll down"
       >
         <ArrowDown className="h-5 w-5" />

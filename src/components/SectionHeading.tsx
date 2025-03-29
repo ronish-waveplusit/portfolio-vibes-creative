@@ -23,9 +23,9 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
         className
       )}
     >
-      <h2 className="text-3xl font-bold tracking-tight relative inline-block">
+      <h2 className="text-3xl font-bold tracking-tight relative inline-block text-[#7F1D1D]">
         {title}
-        <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-primary"></span>
+        <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-[#9A3412]"></span>
       </h2>
       {subtitle && (
         <p className="text-muted-foreground max-w-3xl">

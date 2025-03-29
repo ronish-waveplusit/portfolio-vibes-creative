@@ -35,12 +35,12 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
         scrolled 
-          ? "bg-white/90 dark:bg-gray-900/90 shadow-md backdrop-blur-xl" 
+          ? "bg-white/95 dark:bg-gray-900/95 shadow-md backdrop-blur-sm" 
           : "bg-transparent"
       )}
     >
       {/* Traditional Newari decorative pattern at top */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-newari-maroon via-newari-gold to-newari-red"></div>
+      <div className="absolute top-0 left-0 right-0 h-1 bg-[#9A3412]"></div>
       
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex items-center justify-between py-5">
@@ -49,28 +49,28 @@ const Navbar = () => {
             className="flex items-center space-x-2"
           >
             {/* Newari-inspired logo element */}
-            <div className="w-8 h-8 biska-jatra-element"></div>
-            <span className="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-newari-brick to-newari-red dark:from-newari-amber dark:to-newari-gold">
+            <div className="w-8 h-8 bg-[#9A3412] rounded-full"></div>
+            <span className="text-xl font-bold tracking-tight text-[#7F1D1D]">
               Ronish Prajapati
             </span>
           </Link>
           
           <nav className="hidden md:flex items-center">
             <div className="flex items-center space-x-1">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   className={cn(
-                    "relative px-4 py-2 text-sm font-medium transition-colors rounded-md group",
+                    "relative px-4 py-2 text-sm font-medium transition-colors rounded-none group",
                     location.pathname === link.path
-                      ? "text-newari-maroon dark:text-newari-gold"
-                      : "text-muted-foreground hover:text-newari-maroon dark:hover:text-newari-gold"
+                      ? "text-[#7F1D1D]"
+                      : "text-muted-foreground hover:text-[#9A3412]"
                   )}
                 >
                   {/* Newari-inspired ornamental active indicator */}
                   {location.pathname === link.path && (
-                    <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-newari-maroon via-newari-gold to-newari-red"></span>
+                    <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-[#9A3412]"></span>
                   )}
                   {link.name}
                 </Link>
@@ -91,8 +91,8 @@ const Navbar = () => {
       {/* Mobile menu with Newari-inspired decoration */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex md:hidden pt-20 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-newari-maroon via-newari-gold to-newari-red"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-newari-maroon via-newari-gold to-newari-red"></div>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-[#9A3412]"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#9A3412]"></div>
           
           <nav className="flex flex-col items-center justify-center w-full gap-8 p-8 animate-fade-in">
             {navLinks.map((link, index) => (
@@ -103,19 +103,16 @@ const Navbar = () => {
                   "text-xl font-medium relative transition-all animate-fade-in flex flex-col items-center",
                   `stagger-${index + 1}`,
                   location.pathname === link.path
-                    ? "text-newari-maroon dark:text-newari-gold"
-                    : "text-muted-foreground hover:text-newari-maroon dark:hover:text-newari-gold"
+                    ? "text-[#7F1D1D]"
+                    : "text-muted-foreground hover:text-[#9A3412]"
                 )}
               >
                 {link.name}
                 {location.pathname === link.path && (
-                  <span className="mt-2 w-12 h-1 bg-gradient-to-r from-newari-maroon via-newari-gold to-newari-red rounded-full"></span>
+                  <span className="mt-2 w-12 h-1 bg-[#9A3412] rounded-none"></span>
                 )}
               </Link>
             ))}
-            
-            {/* Decorative elements */}
-            <div className="absolute bottom-12 w-24 h-24 opacity-20 yomari-punhi-element"></div>
           </nav>
         </div>
       )}
