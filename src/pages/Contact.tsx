@@ -57,15 +57,19 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F9F6F2] pt-24 pb-20">
+    <div className="min-h-screen pt-24 pb-20 relative">
+      {/* Festival background image with overlay */}
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/c6023dd7-ffc6-4aef-925f-a6fef0636cfa.png')] bg-cover bg-center bg-no-repeat opacity-15 z-0"></div>
+      <div className="absolute inset-0 bg-[#F9F6F2]/80 z-0"></div>
+      
       {/* Traditional Newari decorative header */}
-      <div className="w-full h-16 bg-[#9A3412] relative mb-16">
+      <div className="w-full h-16 bg-[#9A3412] relative mb-16 z-10">
         <div className="absolute bottom-0 left-0 w-full h-6 bg-[#9A3412]" style={{
           clipPath: "polygon(0% 100%, 5% 0%, 10% 100%, 15% 0%, 20% 100%, 25% 0%, 30% 100%, 35% 0%, 40% 100%, 45% 0%, 50% 100%, 55% 0%, 60% 100%, 65% 0%, 70% 100%, 75% 0%, 80% 100%, 85% 0%, 90% 100%, 95% 0%, 100% 100%)"
         }}></div>
       </div>
       
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-[#7F1D1D] mb-4">Get in Touch</h1>
           <div className="w-24 h-1 bg-[#9A3412] mx-auto mb-6"></div>
@@ -74,7 +78,7 @@ const Contact = () => {
         
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact info column */}
-          <div className="lg:col-span-1 bg-white border-2 border-[#9A3412] p-8 relative">
+          <div className="lg:col-span-1 bg-white/90 backdrop-blur-sm border-2 border-[#9A3412] p-8 relative">
             {/* Newari window pattern decoration */}
             <div className="absolute top-0 left-0 w-full h-6 bg-[#9A3412]"></div>
             
@@ -144,7 +148,7 @@ const Contact = () => {
           </div>
           
           {/* Contact form column */}
-          <div className="lg:col-span-2 bg-white border-2 border-[#9A3412] p-8 relative">
+          <div className="lg:col-span-2 bg-white/90 backdrop-blur-sm border-2 border-[#9A3412] p-8 relative">
             {/* Newari window pattern decoration */}
             <div className="absolute top-0 left-0 w-full h-6 bg-[#9A3412]"></div>
             
@@ -189,6 +193,7 @@ const Contact = () => {
                       )}
                     />
                   </div>
+                  
                   <FormField
                     control={form.control}
                     name="subject"
@@ -206,6 +211,7 @@ const Contact = () => {
                       </FormItem>
                     )}
                   />
+                  
                   <FormField
                     control={form.control}
                     name="message"
