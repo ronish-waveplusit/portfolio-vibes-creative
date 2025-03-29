@@ -9,7 +9,10 @@ const ContactCTA = () => {
   return (
     <section className="py-24 px-4 relative overflow-hidden">
       {/* Festival background image with overlay */}
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/fea760f0-ff0f-495c-9363-fdf69c0b05ba.png')] bg-cover bg-center bg-fixed bg-no-repeat opacity-15 z-0"></div>
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat opacity-15 z-0"
+        style={{ backgroundImage: "url('/lovable-uploads/fea760f0-ff0f-495c-9363-fdf69c0b05ba.png')" }}
+      ></div>
       <div className="absolute inset-0 bg-[#F9F6F2]/80 z-0"></div>
       
       {/* Traditional decorative divider at top */}

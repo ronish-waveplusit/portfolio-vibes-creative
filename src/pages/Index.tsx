@@ -28,16 +28,34 @@ const NewariSeparator = () => (
 // Traditional Newari festival banner component with authentic design elements
 const FestivalBanner = () => (
   <div className="newari-door-frame my-12 mx-4 md:mx-12 relative">
-    <div className="absolute inset-0 bg-[url('/lovable-uploads/fea760f0-ff0f-495c-9363-fdf69c0b05ba.png')] bg-cover bg-center opacity-15"></div>
+    <div 
+      className="absolute inset-0 bg-cover bg-center opacity-15"
+      style={{ backgroundImage: "url('/lovable-uploads/fea760f0-ff0f-495c-9363-fdf69c0b05ba.png')" }}
+    ></div>
     <div className="absolute inset-0 bg-white/70"></div>
     <div className="relative py-8 px-6 md:px-12 overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('/lovable-uploads/newari-pattern.png')] bg-repeat"></div>
+      <div 
+        className="absolute top-0 left-0 w-full h-full opacity-10 bg-repeat"
+        style={{ backgroundImage: "url('/lovable-uploads/newari-pattern.png')" }}
+      ></div>
       
       {/* Traditional corner decorations inspired by temple architecture */}
-      <div className="absolute top-0 left-0 w-16 h-16 bg-[url('/lovable-uploads/wood-carving.png')] bg-no-repeat bg-cover opacity-15"></div>
-      <div className="absolute top-0 right-0 w-16 h-16 bg-[url('/lovable-uploads/wood-carving.png')] bg-no-repeat bg-cover opacity-15 transform rotate-90"></div>
-      <div className="absolute bottom-0 left-0 w-16 h-16 bg-[url('/lovable-uploads/wood-carving.png')] bg-no-repeat bg-cover opacity-15 transform -rotate-90"></div>
-      <div className="absolute bottom-0 right-0 w-16 h-16 bg-[url('/lovable-uploads/wood-carving.png')] bg-no-repeat bg-cover opacity-15 transform rotate-180"></div>
+      <div 
+        className="absolute top-0 left-0 w-16 h-16 bg-no-repeat bg-cover opacity-15"
+        style={{ backgroundImage: "url('/lovable-uploads/wood-carving.png')" }}
+      ></div>
+      <div 
+        className="absolute top-0 right-0 w-16 h-16 bg-no-repeat bg-cover opacity-15 transform rotate-90"
+        style={{ backgroundImage: "url('/lovable-uploads/wood-carving.png')" }}
+      ></div>
+      <div 
+        className="absolute bottom-0 left-0 w-16 h-16 bg-no-repeat bg-cover opacity-15 transform -rotate-90"
+        style={{ backgroundImage: "url('/lovable-uploads/wood-carving.png')" }}
+      ></div>
+      <div 
+        className="absolute bottom-0 right-0 w-16 h-16 bg-no-repeat bg-cover opacity-15 transform rotate-180"
+        style={{ backgroundImage: "url('/lovable-uploads/wood-carving.png')" }}
+      ></div>
       
       <div className="relative z-10 text-center">
         <div className="flex justify-center space-x-12 mb-6">
@@ -59,12 +77,18 @@ const FestivalBanner = () => (
 
 const Index = () => {
   return (
-    <div className="relative overflow-x-hidden bg-[url('/lovable-uploads/brick-texture-light.png')] bg-fixed bg-opacity-5 dark:bg-gray-950">
+    <div 
+      className="relative overflow-x-hidden bg-fixed bg-opacity-5 dark:bg-gray-950"
+      style={{ backgroundImage: "url('/lovable-uploads/brick-texture-light.png')" }}
+    >
       {/* Cultural background pattern - brick texture from Newari architecture with layered effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-amber-50/30 to-white/10 dark:from-gray-900/30 dark:to-gray-950/10 z-0"></div>
       
       {/* Traditional Newari architectural elements as decorative border */}
-      <div className="absolute top-0 left-0 w-full h-24 bg-[url('/lovable-uploads/wood-carving.png')] bg-repeat-x opacity-10 dark:opacity-15"></div>
+      <div 
+        className="absolute top-0 left-0 w-full h-24 bg-repeat-x opacity-10 dark:opacity-15"
+        style={{ backgroundImage: "url('/lovable-uploads/wood-carving.png')" }}
+      ></div>
       
       {/* Main content sections with Newari-inspired spacing and decoration */}
       <div className="pt-16 relative z-10">
@@ -97,7 +121,10 @@ const Index = () => {
         </div>
         
         {/* Traditional Newari architectural elements as decorative footer border */}
-        <div className="relative h-16 w-full bg-[url('/lovable-uploads/wood-carving.png')] bg-repeat-x opacity-10 dark:opacity-15 transform rotate-180"></div>
+        <div 
+          className="relative h-16 w-full bg-repeat-x opacity-10 dark:opacity-15 transform rotate-180"
+          style={{ backgroundImage: "url('/lovable-uploads/wood-carving.png')" }}
+        ></div>
       </div>
     </div>
   );

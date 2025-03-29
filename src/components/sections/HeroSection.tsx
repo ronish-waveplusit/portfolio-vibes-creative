@@ -19,7 +19,10 @@ const HeroSection = () => {
   return (
     <section className="min-h-[90vh] flex flex-col items-center justify-center text-center px-4 relative">
       {/* Festival background image with overlay */}
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/c6023dd7-ffc6-4aef-925f-a6fef0636cfa.png')] bg-cover bg-center bg-fixed bg-no-repeat opacity-15 z-0"></div>
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat opacity-15 z-0"
+        style={{ backgroundImage: "url('/lovable-uploads/c6023dd7-ffc6-4aef-925f-a6fef0636cfa.png')" }}
+      ></div>
       <div className="absolute inset-0 bg-[#F9F6F2]/80 z-0"></div>
       
       <div className="max-w-3xl mx-auto space-y-8 relative z-10">
