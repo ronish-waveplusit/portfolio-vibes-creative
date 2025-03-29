@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -59,7 +58,10 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-24 pb-20 relative">
       {/* Festival background image with overlay */}
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/c6023dd7-ffc6-4aef-925f-a6fef0636cfa.png')] bg-cover bg-center bg-no-repeat opacity-15 z-0"></div>
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15 z-0"
+        style={{ backgroundImage: "url('/lovable-uploads/c6023dd7-ffc6-4aef-925f-a6fef0636cfa.png')" }}
+      ></div>
       <div className="absolute inset-0 bg-[#F9F6F2]/80 z-0"></div>
       
       {/* Traditional Newari decorative header */}
