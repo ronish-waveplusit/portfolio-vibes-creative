@@ -27,8 +27,10 @@ const NewariSeparator = () => (
 
 // Traditional Newari festival banner component with authentic design elements
 const FestivalBanner = () => (
-  <div className="newari-door-frame my-12 mx-4 md:mx-12">
-    <div className="relative py-8 px-6 md:px-12 overflow-hidden bg-newari-brick/10 rounded-lg">
+  <div className="newari-door-frame my-12 mx-4 md:mx-12 relative">
+    <div className="absolute inset-0 bg-[url('/lovable-uploads/fea760f0-ff0f-495c-9363-fdf69c0b05ba.png')] bg-cover bg-center opacity-15"></div>
+    <div className="absolute inset-0 bg-white/70"></div>
+    <div className="relative py-8 px-6 md:px-12 overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('/lovable-uploads/newari-pattern.png')] bg-repeat"></div>
       
       {/* Traditional corner decorations inspired by temple architecture */}

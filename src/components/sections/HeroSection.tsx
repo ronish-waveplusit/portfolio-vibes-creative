@@ -18,10 +18,11 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-[90vh] flex flex-col items-center justify-center text-center px-4 relative">
-      {/* Traditional Newari background pattern */}
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/newari-pattern.png')] bg-repeat opacity-[0.03]"></div>
+      {/* Festival background image with overlay */}
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/c6023dd7-ffc6-4aef-925f-a6fef0636cfa.png')] bg-cover bg-center bg-fixed bg-no-repeat opacity-15 z-0"></div>
+      <div className="absolute inset-0 bg-[#F9F6F2]/80 z-0"></div>
       
-      <div className="max-w-3xl mx-auto space-y-8">
+      <div className="max-w-3xl mx-auto space-y-8 relative z-10">
         <div className="flex flex-col items-center">
           <div className="mb-6 relative">
             <div className="absolute -inset-1.5 bg-[#9A3412] rounded-full blur-sm animate-pulse"></div>
@@ -81,7 +82,7 @@ const HeroSection = () => {
       </div>
       <button 
         onClick={handleScrollDown}
-        className="absolute bottom-12 animate-bounce p-3 rounded-full bg-white text-[#9A3412] shadow-md hover:bg-[#9A3412] hover:text-white transition-colors"
+        className="absolute bottom-12 animate-bounce p-3 rounded-full bg-white/80 text-[#9A3412] shadow-md hover:bg-[#9A3412] hover:text-white transition-colors z-10"
         aria-label="Scroll down"
       >
         <ArrowDown className="h-5 w-5" />
